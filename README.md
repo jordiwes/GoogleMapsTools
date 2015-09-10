@@ -4,6 +4,22 @@ PHP wrapper for Google Maps API
 ## Author
 Simeon Goranov - sgoranov@gmail.com
 
+## Installation
+
+Update your composer.json adding following
+
+```
+"require": {
+    "sgoranov/google-maps-tools": "dev-master"
+},
+```
+
+Run composer update to fetch and install
+
+```
+php composer.phar update
+````
+
 ## Usage
 
 Use the Google Maps Geocoding API call to search by address:
@@ -27,7 +43,7 @@ Use Google Maps Distancematrix API call to calculate the distance between two po
 $dmatrix = new Distancematrix($startPoint, $endPoint);
 try {
     $dmatrix->execute();
-    $result = $$dmatrix->getFirstRouteDistance();
+    $result = $dmatrix->getFirstRouteDistance();
 } catch (ApiException $e) {
     throw new \InvalidArgumentException('Unable to calculate the distance');
 }
