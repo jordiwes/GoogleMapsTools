@@ -5,7 +5,7 @@ use GoogleMapsTools\ApiException;
 
 abstract class RemoteCall
 {
-    protected $result;
+    protected $result = null;
 
     abstract public function execute();
 

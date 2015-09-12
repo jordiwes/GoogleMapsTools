@@ -25,6 +25,10 @@ class Geocode extends RemoteCall
 
     public function getFirstPoint()
     {
+        if (is_null($this->result)) {
+            $this->execute();
+        }
+
         $location = $this->result['results'][0]['geometry']['location'];
         return new Point($location['lat'], $location['lng']);
     }

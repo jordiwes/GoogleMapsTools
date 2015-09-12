@@ -26,7 +26,6 @@ class DistanceCalc
 
             $dmatric = new Distancematrix($start, $end);
             try {
-                $dmatric->execute();
                 $result = $result + $dmatric->getFirstRouteDistance();
             } catch (ApiException $e) {
                 throw new \InvalidArgumentException('Unable to calculate the distance');

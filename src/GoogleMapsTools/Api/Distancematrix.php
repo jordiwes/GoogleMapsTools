@@ -30,6 +30,10 @@ class Distancematrix extends RemoteCall
 
     public function getFirstRouteDistance()
     {
+        if (is_null($this->result)) {
+            $this->execute();
+        }
+
         return $this->result['rows'][0]['elements'][0]['distance']['value'];
     }
 }
