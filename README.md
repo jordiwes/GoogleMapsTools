@@ -42,8 +42,7 @@ Use Google Maps Distancematrix API call to calculate the distance between two po
 ```php
 $dmatrix = new Distancematrix($startPoint, $endPoint);
 try {
-    $dmatrix->execute();
-    $result = $dmatrix->getFirstRouteDistance();
+    $result = $dmatrix->fetch();
 } catch (ApiException $e) {
     throw new \InvalidArgumentException('Unable to calculate the distance');
 }
@@ -70,6 +69,20 @@ $point = $geocode->getFirstPoint();
 $calc->addPoint($point);
 
 $distance = $calc->calculate();
+```
+
+## Unit testing
+
+To run all the tests execute following from GoogleMapsTools/src sirectory
+
+```
+phpunit GoogleMapsTools/Test/AllTests.php
+```
+
+To run one specific test only execute the following from GoogleMapsTools/src sirectory
+
+```
+phpunit GoogleMapsTools/Test/Api/DistancematrixTest.php
 ```
 
 
